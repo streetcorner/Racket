@@ -1,0 +1,22 @@
+Q:
+Is it an animal?
+Q:
+Does it hop?
+A:
+frog
+Q:
+Does it meow?
+A:
+cat
+A:
+dog
+Q:
+Does it have wheels?
+A:
+bicycle
+Q:
+Is it nice?
+A:
+TA
+A:
+teacher

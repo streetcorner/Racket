@@ -1,0 +1,39 @@
+#lang racket
+(require dyoo-while-loop)
+
+;;;excs #6
+(define (my-filter2 f l)
+  (letrec ((rec (lambda (f l r)
+                  (cond
+                    [(empty? l) r]
+                    [else (cond
+                            [(f (first l)) (rec f (rest l)(cons (first l) r))]
+                            [else (rec f (rest l) r)])]))))
+    (reverse (rec f l '()))))
+;;excs #7
+(define (zip1 l1 l2)
+  (cond
+    [(and (empty? l1) (empty? l2)) '()]
+    [else (cond
+            [(and (empty? l1) (not (empty? l2))) (append (list (first l2)) (zip1 l1 (rest l2))  )]
+            [else (cond
+                    [(and (empty? l2) (not (empty? l1))) (append  (list (first l1) (zip1 (rest l1) l2)))]
+                    [else (append (cons (first l1) (list (first l2))) (zip1 (rest l1) (rest l2)))])])]))
+
+(define (zip2 l1 l2)
+  (letrec ((rec (lambda (l1 l2 r)
+             (cond
+               [(empty? l1) (append r l2)]
+               [(empty? l2) (append r l1)]
+               [else (rec (rest l1) (rest l2) (append r (list (first l1)) (list (first l2))))]))))
+    (rec l1 l2 '())))
+
+;;excs #8
+
+                               
+               
+               
+                    
+                   
+
+    

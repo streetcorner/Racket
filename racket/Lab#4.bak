@@ -1,0 +1,3 @@
+#lang racket
+;;(define t1 (readtree "powersupply.txt" ))
+;;(diagnose t1)
